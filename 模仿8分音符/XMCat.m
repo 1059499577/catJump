@@ -14,6 +14,7 @@
 
 @interface XMCat ()
 @property (nonatomic, strong) UIDynamicAnimator *anim;
+@property (nonatomic, strong) UIImageView *carImageView;
 @end
 
 @implementation XMCat
@@ -22,9 +23,12 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor blueColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
+        self.carImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 25, 50, 25)];
+        [self addSubview:self.carImageView];
+        self.carImageView.image = [UIImage imageNamed:@"lecar"];
         self.isAlive = YES;
     }
     return self;
